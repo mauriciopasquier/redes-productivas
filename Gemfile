@@ -7,6 +7,10 @@ gem 'rails', '3.2.8'
 
 gem 'pg'
 
+# Presentation
+gem 'haml-rails'
+gem 'draper'
+gem 'rails-i18n'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -16,7 +20,7 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-
+  gem 'therubyracer'
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -30,9 +34,24 @@ gem 'jquery-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem 'thin'
+gem 'SyslogLogger', :require => 'syslog_logger'
 
 # Deploy with Capistrano
 # gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+
+group :development do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'hirb'
+end
+
+group :test do
+  # Pretty printed test output
+  gem 'turn', :require => false
+  gem 'minitest'
+  gem 'factory_girl_rails'
+end
