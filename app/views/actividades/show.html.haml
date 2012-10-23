@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @actividad.nombre
+%p
+  %b Descripcion:
+  = @actividad.descripcion
+
+= link_to 'Edit', edit_actividad_path(@actividad)
+\|
+= link_to 'Back', actividades_path
