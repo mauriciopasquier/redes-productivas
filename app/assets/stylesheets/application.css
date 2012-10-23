@@ -8,6 +8,19 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ * Bootstrap
+ * =========
+ *
+ * Import "bootstrap" in your SCSS file of choice to get all of Bootstrap's
+ * styles, mixins and variables! We recommend against using //= require
+ * directives, since none of your other stylesheets will be able to use the
+ * awesome mixins that Bootstrap has defined:
+ *
+ *   @import "bootstrap";
+ *
+ * As per the Bootstrap project we don't include the responsive styles by
+ * default. @import "bootstrap-responsive"; to get them.
+ *
  *= require_self
  *= require_tree .
  */
