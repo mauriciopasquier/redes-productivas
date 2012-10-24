@@ -7,4 +7,6 @@ Tesla::Application.routes.draw do
 
   resources :actividades, path_names: f
 
+  resources :productos, path_names: m
+
 end
