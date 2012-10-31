@@ -17,4 +17,5 @@
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'actividad', 'actividades'
   inflect.irregular 'producto', 'productos'
+  inflect.irregular 'relacion', 'relaciones'
 end

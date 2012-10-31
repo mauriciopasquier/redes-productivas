@@ -1,0 +1,8 @@
+es:
+  activerecord:
+    errors:
+      models:
+        hs12:
+          attributes:
+            codigo:
+              de_bienes: El código no es de un bien
