@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require d3.v2.min
+//= require dagre
 //= require_tree .
