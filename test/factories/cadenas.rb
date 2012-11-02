@@ -1,10 +1,6 @@
 # encoding: utf-8
 FactoryGirl.define do
-  factory :producto do
+  factory :cadena do
     nombre { generate :cadena_unica }
-    descripcion "sarasa"
-
-    hs12
-
   end
 end

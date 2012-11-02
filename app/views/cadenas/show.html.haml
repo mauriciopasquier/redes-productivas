@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @cadena.nombre
+
+= link_to 'Edit', edit_cadena_path(@cadena)
+\|
+= link_to 'Back', cadenas_path

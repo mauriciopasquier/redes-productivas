@@ -9,4 +9,8 @@ Tesla::Application.routes.draw do
 
   resources :productos, path_names: m
 
+  resources :cadenas, path_names: f do
+    resources :relaciones, path_names: f
+  end
+
 end
