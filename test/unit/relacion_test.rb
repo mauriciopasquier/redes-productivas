@@ -4,8 +4,8 @@ require './test/test_helper'
 class RelacionTest < ActiveSupport::TestCase
 
   test 'la fábrica debería devolver asociaciones correctas' do
-    producto_actividad = create(:relacion_producto_actividad)
-    actividad_producto = create(:relacion_actividad_producto)
+    producto_actividad = build_stubbed(:relacion_producto_actividad)
+    actividad_producto = build_stubbed(:relacion_actividad_producto)
 
     assert_not_nil producto_actividad.entrada, "No le asignó un producto"
     assert_not_nil producto_actividad.salida, "No le asignó una actividad"

@@ -1,8 +1,9 @@
 # encoding: utf-8
 FactoryGirl.define do
   factory :hs12 do
-    codigo { generate :cadena_unica }
+    codigo {
+      "#{rand(9999).to_s.rjust(4, '0')}.#{rand(99).to_s.rjust(2, '0')}"
+    }
     descripcion "sarasa"
-    comentario  "sarasa"
   end
 end
