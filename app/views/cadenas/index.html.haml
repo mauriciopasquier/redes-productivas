@@ -1,0 +1,19 @@
+%h1 Listing cadenas
+
+%table
+  %tr
+    %th Nombre
+    %th
+    %th
+    %th
+
+  - @cadenas.each do |cadena|
+    %tr
+      %td= cadena.nombre
+      %td= link_to 'Show', cadena
+      %td= link_to 'Edit', edit_cadena_path(cadena)
+      %td= link_to 'Destroy', cadena, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Cadena', new_cadena_path
