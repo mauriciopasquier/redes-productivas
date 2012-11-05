@@ -11,4 +11,6 @@ class Actividad < ActiveRecord::Base
   has_many :destinos, class_name: 'Relacion', as: :entrada
   has_many :salidas, through: :destinos,
             source: :salida, source_type: 'Producto'
+
+  validates_uniqueness_of :nombre
 end

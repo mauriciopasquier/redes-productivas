@@ -11,4 +11,6 @@ class Producto < ActiveRecord::Base
   has_many :origenes, class_name: 'Relacion', as: :salida
   has_many :entradas, through: :origenes, source: :entrada,
             source_type: 'Actividad'
+
+  validates_uniqueness_of :nombre
 end
