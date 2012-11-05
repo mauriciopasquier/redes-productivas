@@ -1,13 +1,23 @@
-= form_for @cadena do |f|
-  - if @cadena.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@cadena.errors.count, "error")} prohibited this cadena from being saved:"
-      %ul
-        - @cadena.errors.full_messages.each do |msg|
-          %li= msg
+= form_for @cadena.preparada, html: { class: 'cadena' } do |f|
+  = f.error_messages
 
-  .field
-    = f.label :nombre
-    = f.text_field :nombre
+  = f.label :nombre
+  = f.text_field :nombre
+  = hidden_field_tag 'dot', @cadena.to_dot
+
+  %h2 Relaciones
+
+  = render 'grafo'
+
+  %table
+    %tbody
+      = f.nested_fields_for :relaciones, new_object: relacion_preparada,
+                            show_empty: true do |f|
+        - if f
+          = render 'relacion', f: f
+        - else
+          = render 'vacio'
+  .add= link_to 'nueva relación', "#"
+
   .actions
-    = f.submit 'Save'
+    = f.submit 'Guardar'

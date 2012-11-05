@@ -11,8 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui.min
 //= require jquery_ujs
+//= require jquery.nested-fields
 //= require bootstrap
 //= require d3.v2.min
 //= require dagre
+//= require dagre-demo
 //= require_tree .

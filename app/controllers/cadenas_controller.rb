@@ -13,18 +13,19 @@ class CadenasController < ApplicationController
   # GET /cadenas/1
   # GET /cadenas/1.json
   def show
-    @cadena = Cadena.find(params[:id])
+    @cadena = CadenaDecorator.new(Cadena.find(params[:id]))
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @cadena }
+      format.dot  { render text: @cadena.to_dot }
     end
   end
 
   # GET /cadenas/new
   # GET /cadenas/new.json
   def new
-    @cadena = Cadena.new
+    @cadena = CadenaDecorator.new(Cadena.new)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,7 +35,7 @@ class CadenasController < ApplicationController
 
   # GET /cadenas/1/edit
   def edit
-    @cadena = Cadena.find(params[:id])
+    @cadena = CadenaDecorator.new(Cadena.find(params[:id]))
   end
 
   # POST /cadenas
@@ -44,7 +45,8 @@ class CadenasController < ApplicationController
 
     respond_to do |format|
       if @cadena.save
-        format.html { redirect_to @cadena, notice: 'Cadena was successfully created.' }
+        format.html { redirect_to cadena_o_relaciones,
+                                  notice: 'Cadena was successfully updated.' }
         format.json { render json: @cadena, status: :created, location: @cadena }
       else
         format.html { render action: "new" }
@@ -60,7 +62,8 @@ class CadenasController < ApplicationController
 
     respond_to do |format|
       if @cadena.update_attributes(params[:cadena])
-        format.html { redirect_to @cadena, notice: 'Cadena was successfully updated.' }
+        format.html { redirect_to cadena_o_relaciones,
+                                  notice: 'Cadena was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -80,4 +83,12 @@ class CadenasController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+    # Determina la ruta a la que reenvia
+    def cadena_o_relaciones
+      params[:relaciones].present? ? cadena_relaciones_url(@cadena) : @cadena
+    end
+
 end
