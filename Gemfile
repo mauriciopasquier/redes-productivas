@@ -13,6 +13,9 @@ gem 'draper'
 gem 'rails-i18n'
 gem 'd3_rails'
 gem 'fugue_icons_rails'
+gem 'dynamic_form'
+gem 'ruby-graphviz'
+gem 'awesome_nested_fields'
 
 # Gems used only for assets and not required
 # in production environments by default.
