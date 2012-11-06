@@ -22,5 +22,6 @@
  * default. @import "bootstrap-responsive"; to get them.
  *
  *= require_self
+ *= require bootstrap_and_overrides
  *= require_tree .
  */
