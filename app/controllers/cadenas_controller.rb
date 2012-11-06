@@ -49,6 +49,7 @@ class CadenasController < ApplicationController
                                   notice: 'Cadena was successfully updated.' }
         format.json { render json: @cadena, status: :created, location: @cadena }
       else
+        @cadena = CadenaDecorator.new(@cadena)
         format.html { render action: "new" }
         format.json { render json: @cadena.errors, status: :unprocessable_entity }
       end

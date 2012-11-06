@@ -13,4 +13,5 @@ class Producto < ActiveRecord::Base
             source_type: 'Actividad'
 
   validates_uniqueness_of :nombre
+  validates_presence_of :nombre
 end

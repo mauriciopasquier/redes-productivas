@@ -1,17 +1,14 @@
-= form_for @cadena.preparada, html: { class: 'cadena' } do |f|
+= form_for @cadena, html: { class: 'cadena' } do |f|
   = f.error_messages
 
   = f.label :nombre
   = f.text_field :nombre
-  = hidden_field_tag 'dot', @cadena.to_dot
 
   %h2 Relaciones
 
-  = render 'grafo'
-
   %table
     %tbody
-      = f.nested_fields_for :relaciones, new_object: relacion_preparada,
+      = f.nested_fields_for :relaciones, new_object: @cadena.relacion,
                             show_empty: true do |f|
         - if f
           = render 'relacion', f: f

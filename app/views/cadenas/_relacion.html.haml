@@ -2,12 +2,12 @@
   %td
     = f.fields_for :entrada do |fe|
       = fe.text_field :nombre
-  %td= "-->"
+  %td.direccion= f.select :direccion, "<option>a->p</option><option>p->a</option>".html_safe
   %td
     = f.fields_for :salida do |fs|
       = fs.text_field :nombre
-  %td= link_to 'Show', [@cadena, relacion]
   %td
-    = link_to 'Destroy', [@cadena, relacion], class: 'remove', data: { confirm: 'Are you sure?' }
+    = link_to image_tag('fugue-icons/cross.png'),
+              '#', class: 'remove', data: { confirm: '¡Confirmalo!' }
     = f.hidden_field :id
     = f.hidden_field :_destroy

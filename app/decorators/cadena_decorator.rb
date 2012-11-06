@@ -5,7 +5,7 @@ class CadenaDecorator < Draper::Base
   decorates_association :relaciones
 
   def to_dot
-    grafo = GraphViz.new(:G, type: :digraph)
+    grafo = GraphViz.new(nombre, type: :digraph)
     relaciones.each do |arista|
       a, b = arista.entrada, arista.salida
       grafo.add_edges a.id_nodo, b.id_nodo
@@ -15,13 +15,10 @@ class CadenaDecorator < Draper::Base
     grafo.output dot: String
   end
 
-  def preparada
-    if relaciones.empty?
-      relaciones.build(
-        entrada: Actividad.new(nombre: 'nueva'),
-        salida: Producto.new(nombre: 'nuevo'))
-    end
-    self
+  def relacion
+    RelacionDecorator.new(
+      Relacion.new( entrada: Actividad.new,
+                    salida: Actividad.new ) )
   end
 
 end
