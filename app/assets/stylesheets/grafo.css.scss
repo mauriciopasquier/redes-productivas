@@ -1,32 +1,35 @@
+@import "bootstrap";
 @import "constantes";
+
+label { color: $grafo; }
 
 svg {
   width: 100%;
   height: 50%;
-}
 
-#arrowhead {
-  fill: $grafo;
-}
-
-.node {
-  rect {
-    fill: transparent;
+  #arrowhead {
+    fill: $grafo;
   }
-}
 
-.edge {
-  path {
-    fill: none;
-    stroke: $grafo;
-    stroke-width: 1.5px;
-
-    .abastecimiento {
-      stroke: red;
+  .node {
+    rect {
+      fill: transparent;
     }
+  }
 
-    .produccion {
-      stroke: green;
+  .edge {
+    path {
+      fill: none;
+      stroke: $grafo;
+      stroke-width: 1.5px;
+
+      .abastecimiento {
+        stroke: red;
+      }
+
+      .produccion {
+        stroke: green;
+      }
     }
   }
 }

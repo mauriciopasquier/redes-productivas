@@ -3,11 +3,10 @@ class ProductoDecorator < Draper::Base
 
   # Devuelve el label para .dot
   def label
-    html =  "<span>"
-    html +=   "<img  alt='#{h.image_alt 'fugue-icons/wooden-box.png'}'"
-    html +=         "src='#{h.image_path 'fugue-icons/wooden-box.png'}' /> "
-    html +=   "<a href='#{h.url_for(producto)}'>#{nombre}</a>"
-    html += "</span>"
+    html =  "<div>"
+    html +=   "<img  alt='#{h.image_alt 'fugue-icons/wooden-box.png'}' src='#{h.image_path 'fugue-icons/wooden-box.png'}' />"
+    html +=   "<a class='menu' href='#'>#{nombre}</a>"
+    html += "</div>"
   end
 
   def id_nodo
