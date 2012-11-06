@@ -4,7 +4,7 @@ class CadenaDecorator < Draper::Base
   decorates :cadena
   decorates_association :relaciones
 
-  def to_dot
+  def grafo(formato = nil)
     grafo = GraphViz.new(nombre, type: :digraph)
     relaciones.each do |arista|
       a, b = arista.entrada, arista.salida
@@ -12,7 +12,12 @@ class CadenaDecorator < Draper::Base
       grafo.add_nodes a.id_nodo, label: a.label
       grafo.add_nodes b.id_nodo, label: b.label
     end
-    grafo.output dot: String
+
+    if formato.present?
+      grafo.output(formato => String)
+    else
+      GraphViz.parse_string grafo.output(dot: String)
+    end
   end
 
   def relacion

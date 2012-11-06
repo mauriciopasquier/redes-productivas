@@ -18,7 +18,7 @@ class CadenasController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @cadena }
-      format.dot  { render text: @cadena.to_dot }
+      format.dot  { render text: @cadena.grafo(:dot) }
     end
   end
 
