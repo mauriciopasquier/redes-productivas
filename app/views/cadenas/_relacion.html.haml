@@ -1,11 +1,11 @@
 %tr.item
   %td
     = f.fields_for :entrada do |fe|
-      = fe.text_field :nombre
+      = fe.text_field :nombre, class: 'entrada'
   %td.direccion= f.select :direccion, "<option>a->p</option><option>p->a</option>".html_safe
   %td
     = f.fields_for :salida do |fs|
-      = fs.text_field :nombre
+      = fs.text_field :nombre, class: 'salida'
   %td
     = link_to image_tag('fugue-icons/cross.png'),
               '#', class: 'remove', data: { confirm: '¡Confirmalo!' }

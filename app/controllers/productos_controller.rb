@@ -1,4 +1,13 @@
 class ProductosController < ApplicationController
+  # Extendemos +ApplicationController#autocompletar+ y definimos el modelo sobre
+  # el que consultar, controlando el input del usuario.
+  #
+  def autocompletar
+    case params[:atributo]
+      when 'nombre' then super(Producto, :nombre)
+    end
+  end
+
   # GET /productos
   # GET /productos.json
   def index
