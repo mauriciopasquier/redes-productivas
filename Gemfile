@@ -8,6 +8,7 @@ gem 'rails', '3.2.8'
 gem 'sqlite3'
 gem 'twitter-bootstrap-rails'
 gem 'watir-webdriver'
+gem 'nokogiri'
 
 # Presentation
 gem 'haml-rails'
