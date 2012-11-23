@@ -27,8 +27,8 @@ namespace :trademap do
                               descripcion: descripcion.capitalize.tr("'", "") )
         end
 
-        fallos = Hs12.import nomencladores, validate: true
-        binding.pry
+        Hs12.import nomencladores
+
         nomencladores.clear
         numero_pagina += 1
         navegador.link(href: /Page\$#{numero_pagina}/).click
