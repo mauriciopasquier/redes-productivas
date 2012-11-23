@@ -1,12 +1,5 @@
 class ActividadesController < ApplicationController
-  # Extendemos +ApplicationController#autocompletar+ y definimos el modelo sobre
-  # el que consultar, controlando el input del usuario.
-  #
-  def autocompletar
-    case params[:atributo]
-      when 'nombre' then super(Actividad, :nombre)
-    end
-  end
+  autocomplete :actividad, :nombre, full: true
 
   # GET /actividades
   # GET /actividades.json

@@ -16,6 +16,7 @@ gem 'fugue_icons_rails'
 gem 'dynamic_form'
 gem 'ruby-graphviz'
 gem 'awesome_nested_fields'
+gem 'rails3-jquery-autocomplete'
 
 # Gems used only for assets and not required
 # in production environments by default.

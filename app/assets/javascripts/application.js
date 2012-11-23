@@ -14,6 +14,7 @@
 //= require jquery-ui.min
 //= require jquery_ujs
 //= require jquery.nested-fields
+//= require autocomplete-rails
 //= require bootstrap
 //= require d3.v2.min
 //= require dagre
