@@ -5,10 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-gem 'twitter-bootstrap-rails'
-gem 'watir-webdriver'
-gem 'nokogiri'
+gem 'pg'
 
 # Presentation
 gem 'haml-rails'
@@ -24,8 +21,9 @@ gem 'awesome_nested_fields'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-#  gem 'bootstrap-sass'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'twitter-bootstrap-rails'
+  gem 'less-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -63,4 +61,10 @@ group :test do
   gem 'turn', :require => false
   gem 'minitest'
   gem 'factory_girl_rails'
+end
+
+group :scraping do
+  gem 'watir-webdriver'
+  gem 'nokogiri'
+  gem 'activerecord-import'
 end
