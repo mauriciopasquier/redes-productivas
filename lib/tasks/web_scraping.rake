@@ -2,6 +2,17 @@
 
 namespace :trademap do
 
+
+  desc "Valores exportados e importados por producto, Argentina-Mundo."
+  task :valores do
+    navegador = Watir::Browser.new :ff
+    navegador.goto "http://www.trademap.org/stCorrespondingProductCodes.aspx"
+    navegador.select_list(name: "ctl00$HeaderContent$HeadControl$DDL_Language").select("Español")
+    tabla = navegador.table id: "ctl00_PageContent_MyGridView1"
+
+
+  end
+
   desc "Insertar en la base de datos los nomencladores HS12 desde TradeMap."
   task :hs12 => :environment do
     puts "Inicializando...\n"

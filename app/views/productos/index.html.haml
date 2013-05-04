@@ -1,9 +1,11 @@
-%h1 Listing productos
+#encoding: utf-8
 
-%table
+%h1 Productos
+
+%table.table.table-hover
   %tr
     %th Nombre
-    %th Descripcion
+    %th Descripción
     %th
     %th
     %th
@@ -12,10 +14,10 @@
     %tr
       %td= producto.nombre
       %td= producto.descripcion
-      %td= link_to 'Show', producto
-      %td= link_to 'Edit', edit_producto_path(producto)
-      %td= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'Mostrar', producto
+      %td= link_to 'Editar', edit_producto_path(producto)
+      %td= link_to 'Eliminar', producto, method: :delete, data: { confirm: '¿Borrar o no borrar? Esa es la cuestión.' }
 
 %br
 
-= link_to 'New Producto', new_producto_path
+= link_to 'Nuevo producto', new_producto_path, class: 'btn'

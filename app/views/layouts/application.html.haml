@@ -11,10 +11,12 @@
   %body
     .navbar.navbar-fixed-top
       .navbar-inner
-        %a.brand RedesProductivas
-        %ul.nav
-          %li= link_to 'Cosa', '#'
-          %li= link_to 'Algo', '#'
+        .container-fluid
+          %a.brand RedesProductivas
+          %ul.nav
+            %li= link_to 'Productos', productos_path
+            %li= link_to 'Actividades', actividades_path
+            %li= link_to 'Cadenas', cadenas_path
           
     .container-fluid
       .row-fluid

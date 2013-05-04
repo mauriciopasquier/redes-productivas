@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20121101025332) do
 
   create_table "hs12s", :force => true do |t|
     t.string "codigo"
-    t.text   "descripcion"
+    t.text   "descripcion", :limit => 255
   end
 
   create_table "productos", :force => true do |t|
